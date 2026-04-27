@@ -19,45 +19,32 @@
     }
 
     /* SIDEBAR */
-    .sidebar {
-      width: 220px;
-      height: 100vh;
-      position: fixed;
-      left: 0;
-      top: 0;
-      padding: 40px 20px;
-      background: #f5f5f5;
-    }
+   .sidebar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 40px 20px;
+  background: #f5f5f5;
 
-    .sidebar h2 {
-      font-size: 18px;
-      margin-bottom: 30px;
-    }
+  display: flex;
+  flex-direction: column;
+}
 
-    .sidebar a {
-      display: block;
-      text-decoration: none;
-      color: black;
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
+.profile {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+}
 
-    .sidebar a:hover {
-      text-decoration: underline;
-    }
-
-    /* PROFILE IMAGE */
-    .profile {
-      margin: 30px 0;
-      display: flex;
-      justify-content: center;
-    }
-
-    .profile img {
-      width: 100%;
-      max-width: 160px;
-      height: auto;
-      display: block;
+.profile img {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  display: block;
+}
     }
 
     /* MAIN CONTENT */
@@ -103,7 +90,6 @@
   <div class="sidebar">
     <h2>My Work</h2>
 
-```
 <a href="about.html">About</a>
 <a href="index.html">Photography</a>
 <a href="#">Videography</a>
@@ -113,7 +99,6 @@
 <div class="profile">
   <img src="images/profile.jpg" alt="Profile Photo">
 </div>
-```
 
   </div>
 
@@ -121,7 +106,6 @@
 
   <div class="main">
 
-```
 <!-- ABOUT BLOCK (same as image blocks) -->
 <div class="work">
   <div class="content">
@@ -144,7 +128,6 @@
 
   </div>
 </div>
-```
 
   </div>
 

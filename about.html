@@ -1,13 +1,134 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About</title>
-</head>
-<body>
-  <h1>About Me</h1>
-  <p>This is my about page.</p>
 
-  <a href="index.html">Back to Home</a>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* LAYOUT */
+    .container {
+      display: flex;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 40px 20px;
+      background: #f5f5f5;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      margin-left: 240px;
+      padding: 40px;
+      width: calc(100% - 240px);
+    }
+
+    /* ABOUT CONTENT */
+    .about {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .about-content {
+      width: 500px;
+    }
+
+    .about h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+    <h2>My Work</h2>
+
+```
+<a href="about.html">About</a>
+<a href="index.html">Photography</a>
+<a href="#">Videography</a>
+<a href="#">Music</a>
+<a href="#">Contact</a>
+```
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="main">
+
+```
+<div class="about">
+  <div class="about-content">
+    <h1>About Me</h1>
+
+    <p>
+      I’m a photographer and creative based in Germany, focused on capturing
+      everyday moments with a clean and minimal style.
+    </p>
+
+    <p>
+      My work ranges from street photography to cinematic visuals, often inspired
+      by light, architecture, and quiet scenes.
+    </p>
+
+    <p>
+      Currently, I’m building a portfolio that reflects both personal projects
+      and professional work.
+    </p>
+
+  </div>
+</div>
+```
+
+  </div>
+
+</div>
+
 </body>
 </html>

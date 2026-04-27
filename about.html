@@ -76,10 +76,16 @@
     }
 
   .profile img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
+ .profile img {
+  width: 100%;
+  max-width: 160px;   /* controls size */
+  height: auto;       /* keeps original proportions */
+  display: block;
+   .profile {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
 }
   </style>
 

@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About</title>
 
-  <!-- ALL CSS IS RIGHT HERE -->
-
   <style>
     body {
       margin: 0;
@@ -15,12 +13,12 @@
       background: #f5f5f5;
     }
 
-    /* LAYOUT */
+    /* MAIN LAYOUT */
     .container {
       display: flex;
     }
 
-    /* SIDEBAR */
+    /* SIDEBAR (LEFT) */
     .sidebar {
       width: 220px;
       height: 100vh;
@@ -29,9 +27,6 @@
       top: 0;
       padding: 40px 20px;
       background: #f5f5f5;
-
-      display: flex;
-      flex-direction: column;
     }
 
     .sidebar h2 {
@@ -51,37 +46,32 @@
       text-decoration: underline;
     }
 
-    /* PROFILE IMAGE */
- .profile {
-  margin-top: auto;
-  margin-bottom: auto;
-  display: flex;
-  justify-content: center;
-}
-
-.profile img {
-  max-width: 180px;  /* safe size */
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-    /* MAIN CONTENT */
+    /* CONTENT WRAPPER (RIGHT SIDE AREA) */
     .main {
       margin-left: 240px;
       padding: 40px;
       width: calc(100% - 240px);
-    }
 
-    /* SAME SYSTEM AS HOMEPAGE */
-    .work {
       display: flex;
-      justify-content: flex-end;
-      margin-bottom: 80px;
+      align-items: center; /* vertically center image + text */
+      gap: 80px;
     }
 
+    /* PROFILE IMAGE (MIDDLE COLUMN) */
+    .profile {
+      flex-shrink: 0;
+    }
+
+    .profile img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* TEXT (RIGHT COLUMN) */
     .content {
-      width: 500px;
+      max-width: 500px;
     }
 
     .content h1 {
@@ -115,36 +105,36 @@
 <a href="#">Music</a>
 <a href="#">Contact</a>
 
+  </div>
+
+  <!-- MAIN AREA -->
+
+  <div class="main">
+
+```
+<!-- IMAGE (MIDDLE) -->
 <div class="profile">
   <img src="images/profile.jpg" alt="Profile Photo">
 </div>
 
-  </div>
+<!-- TEXT (RIGHT) -->
+<div class="content">
+  <h1>About Me</h1>
 
-  <!-- MAIN CONTENT -->
+  <p>
+    I’m a photographer and creative based in Germany, focused on capturing
+    everyday moments with a clean and minimal style.
+  </p>
 
-  <div class="main">
+  <p>
+    My work ranges from street photography to cinematic visuals, often inspired
+    by light, architecture, and quiet scenes.
+  </p>
 
-<div class="work">
-  <div class="content">
-    <h1>About Me</h1>
-
-    <p>
-      I’m a photographer and creative based in Germany, focused on capturing
-      everyday moments with a clean and minimal style.
-    </p>
-
-    <p>
-      My work ranges from street photography to cinematic visuals, often inspired
-      by light, architecture, and quiet scenes.
-    </p>
-
-    <p>
-      Currently, I’m building a portfolio that reflects both personal projects
-      and professional work.
-    </p>
-
-  </div>
+  <p>
+    Currently, I’m building a portfolio that reflects both personal projects
+    and professional work.
+  </p>
 </div>
 
   </div>

@@ -46,6 +46,20 @@
       text-decoration: underline;
     }
 
+    /* PROFILE IMAGE */
+    .profile {
+      margin: 30px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile img {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      display: block;
+    }
+
     /* MAIN CONTENT */
     .main {
       margin-left: 240px;
@@ -53,45 +67,32 @@
       width: calc(100% - 240px);
     }
 
-    /* ABOUT CONTENT */
-    .about {
+    /* SAME SYSTEM AS HOMEPAGE */
+    .work {
       display: flex;
       justify-content: flex-end;
+      margin-bottom: 80px;
     }
 
-    .about-content {
+    .content {
       width: 500px;
     }
 
-    .about h1 {
+    .content h1 {
       font-size: 24px;
       margin-bottom: 20px;
     }
 
-    .about p {
+    .content p {
       font-size: 14px;
       color: #555;
       line-height: 1.6;
       margin-bottom: 15px;
     }
 
-  .profile img {
- .profile img {
-  width: 100%;
-  max-width: 160px;   /* controls size */
-  height: auto;       /* keeps original proportions */
-  display: block;
-   .profile {
-  margin: 30px 0;
-  display: flex;
-  justify-content: center;
-}
-}
   </style>
 
 </head>
-
-<body>
 
 <body>
 
@@ -119,11 +120,13 @@
   <!-- MAIN CONTENT -->
 
   <div class="main">
-    <div class="about">
-      <div class="about-content">
-        <h1>About Me</h1>
 
 ```
+<!-- ABOUT BLOCK (same as image blocks) -->
+<div class="work">
+  <div class="content">
+    <h1>About Me</h1>
+
     <p>
       I’m a photographer and creative based in Germany, focused on capturing
       everyday moments with a clean and minimal style.
@@ -146,9 +149,6 @@
   </div>
 
 </div>
-
-</body>
-
 
 </body>
 </html>

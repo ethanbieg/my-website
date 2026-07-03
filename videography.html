@@ -1,0 +1,342 @@
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Portfolio</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: black;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 40px 20px;
+      background: #f5f5f5;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    .main {
+      margin-left: 240px;
+      width: calc(100% - 240px);
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .main h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 60px;
+      font-weight: normal;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+      margin-bottom: 90px;
+    }
+
+    .photo-item {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-link {
+      width: 75%;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .photo-video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: black;
+  transition: transform 0.3s ease;
+}
+
+.photo-video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-item:hover .photo-video-wrapper {
+  transform: scale(0.92);
+}
+
+
+    .photo-subtitle {
+      margin-top: 4px;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    .video-heading {
+      text-align: center;
+      font-size: 32px;
+      font-weight: normal;
+      margin-top: 20px;
+      margin-bottom: 60px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .video-item {
+      display: flex;
+      justify-content: center;
+    }
+
+    .video-wrapper {
+      width: 80%;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      background: black;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-item:hover .video-wrapper {
+      transform: scale(0.92);
+    }
+
+    @media (max-width: 900px) {
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-link,
+      .video-wrapper {
+        width: 100%;
+      }
+
+      .main {
+        padding: 25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="sidebar">
+
+    <h2>Ethan David Bieg</h2>
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="photography.html">Photography</a>
+    <a href="videography.html">Videography</a>
+    <a href="music.html">Music</a>
+    <a href="visualart.html">Visual Art</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="contact.html">Contact</a>
+
+  </div>
+
+  <div class="main">
+
+    <h1>Music I've released so far</h1>
+
+<div class="photo-grid">
+
+  <div class="photo-item">
+    <a href="" class="photo-link">
+
+      <div class="photo-video-wrapper">
+        <video muted loop preload="metadata">
+          <source src="videography/video1.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="photo-title">
+        (Arizona 2025 - A cinematic reel)
+      </div>
+
+      <div class="photo-subtitle">
+        As short cinematic film I created from a trip I took this past summer in the greater Phoenix area.
+      </div>
+
+    </a>
+  </div>
+
+  <div class="photo-item">
+    <a href="#" class="photo-link">
+
+      <div class="photo-video-wrapper">
+        <video muted loop preload="metadata">
+          <source src="videography/video2.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="photo-title">
+        (Album release video 2025)
+      </div>
+
+      <div class="photo-subtitle">
+        Created this cinematic video as an announcement for my album: "snapshots of a kingdom of light".
+      </div>
+
+    </a>
+
+  </div>
+
+ <div class="photo-item">
+    <a href="#" class="photo-link">
+
+      <div class="photo-video-wrapper">
+        <video muted loop preload="metadata">
+          <source src="videography/video3.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="photo-title">
+        and the darkness has not overcome it
+      </div>
+
+      <div class="photo-subtitle">
+        This was the first single I ever released on streaming. It was a piece of music that came together quickly
+        and I found myself listening to it in times of prayer and reflection. This started the vision for my album.
+      </div>
+
+    </a>
+
+  </div>
+
+ <div class="photo-item">
+    <a href="#" class="photo-link">
+
+      <div class="photo-video-wrapper">
+        <video muted loop preload="metadata">
+          <source src="videography/video4.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="photo-title">
+        Thanksgiving in Wisconsin 2020: A camcorder film
+      </div>
+
+      <div class="photo-subtitle">
+        I took a camcorder on a short reunion trip I had with some dear friends in Wisconsin. Sat on this footage
+        for a few years before I found it again and made this video.
+      </div>
+
+    </a>
+  </div>
+
+</div>
+
+
+    <div class="video-heading">
+      Canvases
+    </div>
+
+    <div class="video-grid">
+
+      <div class="video-item">
+        <div class="video-wrapper">
+          <video muted loop preload="metadata">
+            <source src="videography/1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-wrapper">
+          <video muted loop preload="metadata">
+            <source src="videography/2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="video-item">
+        <div class="video-wrapper">
+          <video muted loop preload="metadata">
+            <source src="videography/3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  document.querySelectorAll(".video-item, .photo-item").forEach(item => {
+
+    const video = item.querySelector("video");
+
+    if (!video) return;
+
+    item.addEventListener("mouseenter", () => {
+      video.play();
+    });
+
+    item.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+
+  });
+</script>
+
+</body>
+</html>
+```

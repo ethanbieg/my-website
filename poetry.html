@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* LAYOUT */
+    .container {
+      display: flex;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 40px 20px;
+      background: #f5f5f5;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      margin-left: 240px;
+      padding: 60px;
+      width: calc(100% - 240px);
+      box-sizing: border-box;
+    }
+
+    /* CONTENT ROWS */
+    .content-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 120px;
+    }
+
+ .text-content {
+  flex: 1;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+    }
+
+    .text-content h2 {
+      font-family: "Brush Script MT", "Lucida Handwriting", cursive;
+      font-size: 52px;
+      color: black;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+.text-content p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  max-width: 600px;
+  margin: 0;
+}
+
+    /* IMAGE SECTION */
+    .image-content {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .image-content img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+    }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .content-row {
+        flex-direction: column-reverse;
+        gap: 30px;
+        margin-bottom: 80px;
+      }
+
+      .text-content {
+        text-align: center;
+      }
+
+      .text-content p {
+        margin: 0 auto;
+      }
+
+      .image-content {
+        justify-content: center;
+      }
+
+      .image-content img {
+        max-width: 100%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>My Work</h2>
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="photography.html">Photography</a>
+    <a href="videography.html">Videography</a>
+    <a href="music.html">Music</a>
+    <a href="visualart.html">Visual Art</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+
+    <!-- ROW 1 -->
+    <div class="content-row">
+
+      <div class="text-content">
+        <p>
+          I like when we let the grass grow long, <br>
+          I like when we let the wildness in. <br>
+          When the lines aren't so clear,<br>
+          When beauty seems to be near,<br>
+          At least closer than before.<br>
+          I enjoy the playfulness of spring,<br>
+          The dance of color, the chase of green.<br>
+          Because in the order of things,<br>
+          Spring seems to get a pass.<br>
+          We don't mind its intrusion, <br>
+          Into places once made exclusive, and bordered.<br>
+          And for us, I think this is how it should be.<br>
+          Because you and I were meant to be free.<br>
+          Maybe in order to regain the wide-eyed life of a child,<br>
+          I must submit to becoming wild.<br>
+          To surrender borders,<br>
+          To truly find order.<br>
+          And not the order of earthly children,<br>
+          No, the oder of a Heavenly Father,<br>
+          Who may just be wilder than we.<br>
+        </p>
+      </div>
+
+      <div class="image-content">
+        <img src="poetry/1.jpg" alt="Featured work">
+      </div>
+
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="content-row">
+
+      <div class="text-content">
+        <p>
+          I've been agreeing with the birds a lot these days.<br>
+          Singing for joy,<br>
+          Feeling the Son's warmth,<br>
+          Praising the Father.<br>
+          <br><br>
+          I've been agreeing with the wildflowers a lot these days.<br>
+          Feeling wild, untamed alive,<br>
+          Eager to overrun the byways of monotony with color and life,<br>
+          Worshipping the one of whom I'm his handiwork.<br>
+        </p>
+      </div>
+
+      <div class="image-content">
+        <img src="poetry/2.jpg" alt="Featured work">
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

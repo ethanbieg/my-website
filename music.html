@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Portfolio</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: black;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 40px 20px;
+      background: #f5f5f5;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN */
+
+    .main {
+      margin-left: 240px;
+      width: calc(100% - 240px);
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .main h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 60px;
+      font-weight: normal;
+    }
+
+    /* PHOTO SECTION */
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px;
+      margin-bottom: 90px;
+    }
+
+    .photo-item {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-link {
+      width: 75%;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .photo-wrapper {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+
+    .photo-item:hover img {
+      transform: scale(0.92);
+    }
+
+    .photo-title {
+      margin-top: 14px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .photo-subtitle {
+      margin-top: 4px;
+      font-size: 14px;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    /* VIDEO SECTION */
+
+    .video-heading {
+      text-align: center;
+      font-size: 32px;
+      font-weight: normal;
+      margin-top: 20px;
+      margin-bottom: 60px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+
+    .video-item {
+      display: flex;
+      justify-content: center;
+    }
+
+    .video-wrapper {
+      width: 80%;
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      background: black;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-item:hover .video-wrapper {
+      transform: scale(0.92);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-link,
+      .video-wrapper {
+        width: 100%;
+      }
+
+      .main {
+        padding: 25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+    <h2>Ethan David Bieg</h2>
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="photography.html">Photography</a>
+    <a href="videography.html">Videography</a>
+    <a href="music.html">Music</a>
+    <a href="visualart.html">Visual Art</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="contact.html">Contact</a>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="main">
+
+    <h1>Music I've released so far</h1>
+
+    <!-- PHOTO SECTION -->
+
+    <div class="photo-grid">
+
+      <!-- PHOTO 1 -->
+
+      <div class="photo-item">
+        <a href="https://open.spotify.com/album/0eAao0eI7KFhPEqcKkucXb?si=BKW2stMRTxqXurWy2aD5OA" class="photo-link">
+
+          <div class="photo-wrapper">
+            <img src="music/1.jpg" alt="Album">
+          </div>
+
+          <div class="photo-title">
+            snapshots of a kingdom of light
+          </div>
+
+          <div class="photo-subtitle">
+            My first album, released in 2025. The heart of this album was for rest, reflection, and meditation.
+            The album is full of natural sounds and samples that I recorded myself in nature. 
+          </div>
+
+        </a>
+      </div>
+
+      <!-- PHOTO 2 -->
+
+      <div class="photo-item">
+        <a href="https://open.spotify.com/album/1DYUJTr4h9BXGPmCwLTPZv?si=PIPIcIobSUq_pvtNnDugIQ" class="photo-link">
+
+          <div class="photo-wrapper">
+            <img src="music/2.jpg" alt="Single">
+          </div>
+
+          <div class="photo-title">
+            and the darkness has not overcome it
+          </div>
+
+          <div class="photo-subtitle">
+            This was the first single I ever released. It was a piece of music that came together quickly
+            and I found myself listening to it in times of prayer and reflection. This started the vision for my album.
+          </div>
+
+        </a>
+      </div>
+
+    </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

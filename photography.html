@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* LAYOUT */
+    .container {
+      display: flex;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 40px 20px;
+      background: #f5f5f5;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      margin-left: 240px;
+      padding: 40px;
+      width: calc(100% - 240px);
+    }
+
+    /* MATCHED GRID SYSTEM */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .photo-item {
+      position: relative;
+    }
+
+    /* IMAGE STYLE (MATCHES OTHER PAGE) */
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+
+      transition: transform 0.3s ease;
+    }
+
+    /* HOVER EFFECT (KEPT YOUR STYLE) */
+    .photo-item:hover img {
+      transform: scale(0.92);
+    }
+
+    .photo-item a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    /* TEXT */
+    .photo-item h3 {
+      font-size: 16px;
+      margin: 8px 0 5px;
+    }
+
+    .photo-item p {
+      font-size: 13px;
+      color: #555;
+      margin: 0;
+    }
+
+    /* RESPONSIVE (same behavior as homepage) */
+    @media (max-width: 900px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>Ethan David Bieg</h2>
+
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="photography.html">Photography</a>
+    <a href="videography.html">Videography</a>
+    <a href="music.html">Music</a>
+    <a href="visualart.html">Visual Art</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="main">
+
+    <div class="photo-grid">
+
+      <!-- PROJECT 1 -->
+      <div class="photo-item">
+        <a href="photography/weddingphotography.html">
+          <img src="images/photography/wedding4x5.jpg" alt="Wedding Photography">
+          <h3>Wedding Photography</h3>
+          <p>Highlights from weddings I've captured.</p>
+        </a>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="photo-item">
+        <a href="photography/portraits.html">
+          <img src="images/photography/portraits.jpg" alt="Portraits">
+          <h3>Portraits</h3>
+          <p>Singles and couples I've photographed.</p>
+        </a>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="photo-item">
+        <a href="photography/filmphotography.html">
+          <img src="images/photography/film4x5.jpg" alt="Film Photography">
+          <h3>35mm Film Photography</h3>
+          <p>My favorite moments on film.</p>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

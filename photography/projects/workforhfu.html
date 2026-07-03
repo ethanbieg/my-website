@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Photography</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* LAYOUT */
+    .container {
+      display: flex;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 40px 20px;
+      background: #f5f5f5;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN */
+    .main {
+      margin-left: 240px;
+      padding: 40px;
+      width: calc(100% - 240px);
+    }
+
+    .main h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* GRID */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px; /* 👈 exact spacing between photos */
+    }
+
+    .item {
+      width: 100%;
+    }
+
+    .item img {
+      width: 100%;     /* fills column */
+      height: auto;    /* keeps full ratio */
+      display: block;
+    }
+
+    .caption {
+      font-size: 14px;
+      margin-top: 4px;
+      text-align: center;
+      color: #555;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>Ethan David Bieg</h2>
+
+    <a href="../index.html">Home</a>
+    <a href="../about.html">About</a>
+    <a href="../photography.html">Photography</a>
+    <a href="../videography.html">Videography</a>
+    <a href="../music.html">Music</a>
+    <a href="../visualart.html">Visual Art</a>
+    <a href="../poetry.html">Poetry</a>
+    <a href="../contact.html">Contact</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <h1>Wedding Photography</h1>
+
+    <div class="gallery">
+
+      <!-- 12 IMAGE SLOTS -->
+
+      <div class="item"><img src="images/weddingphotos/1.jpg"></div>
+      <div class="item"><img src="images/weddingphotos/2.jpg"></div>
+
+      <div class="item"><img src="images/weddingphotos/3.jpg"></div>
+      <div class="item"><img src="images/weddingphotos/4.jpg"></div>
+
+      <div class="item"><img src="images/weddingphotos/5.jpg"></div>
+      <div class="item"><img src="images/weddingphotos/6.jpg"></div>
+
+      <div class="item"><img src="images/weddingphotos/7.jpg"></div>
+      <div class="item"><img src="images/weddingphotos/8.jpg"></div>
+
+      <div class="item"><img src="images/weddingphotos/9.jpg"><div class="caption">Photo 9</div></div>
+      <div class="item"><img src="images/weddingphotos/10.jpg"></div>
+
+      <div class="item"><img src="images/weddingphotos/11.jpg"></div>
+      <div class="item"><img src="images/weddingphotos/12.jpg"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

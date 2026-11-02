@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,12 @@
   <title>My Portfolio</title>
 
   <style>
+
+    /* GLOBAL */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -62,11 +69,12 @@
       margin-bottom: 120px;
     }
 
- .text-content {
-  flex: 1;
-  text-align: right;
-  display: flex;
-  justify-content: flex-end;
+    /* TEXT CONTENT */
+    .text-content {
+      flex: 1;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
     }
 
     .text-content h2 {
@@ -77,13 +85,13 @@
       margin-bottom: 20px;
     }
 
-.text-content p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #333;
-  max-width: 600px;
-  margin: 0;
-}
+    .text-content p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #333;
+      max-width: 600px;
+      margin: 0;
+    }
 
     /* IMAGE SECTION */
     .image-content {
@@ -99,8 +107,18 @@
       display: block;
     }
 
-    /* MOBILE */
+
+    /* ==================================
+       TABLET RESPONSIVENESS
+       Screens below 900px
+    ================================== */
+
     @media (max-width: 900px) {
+
+      .main {
+        padding: 35px;
+      }
+
       .content-row {
         flex-direction: column-reverse;
         gap: 30px;
@@ -108,6 +126,8 @@
       }
 
       .text-content {
+        width: 100%;
+        justify-content: center;
         text-align: center;
       }
 
@@ -116,12 +136,96 @@
       }
 
       .image-content {
+        width: 100%;
         justify-content: center;
       }
 
       .image-content img {
         max-width: 100%;
       }
+
+    }
+
+
+    /* ==================================
+       MOBILE RESPONSIVENESS
+       Screens below 600px
+    ================================== */
+
+    @media (max-width: 600px) {
+
+      /* GENERAL LAYOUT */
+      .container {
+        display: block;
+      }
+
+      /* MOBILE NAVIGATION */
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .sidebar h2 {
+        width: 100%;
+        font-size: 18px;
+        margin: 0 0 5px 0;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      /* MAIN CONTENT */
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 25px 20px;
+      }
+
+      /* POETRY ROWS */
+      .content-row {
+        flex-direction: column-reverse;
+        gap: 25px;
+        margin-bottom: 60px;
+      }
+
+      /* TEXT */
+      .text-content {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .text-content p {
+        font-size: 14px;
+        line-height: 1.8;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .text-content h2 {
+        font-size: 38px;
+      }
+
+      /* IMAGES */
+      .image-content {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .image-content img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+      }
+
     }
 
   </style>

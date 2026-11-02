@@ -1,11 +1,14 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black & White Winter Film</title>
+  <title>My Portfolio</title>
 
   <style>
+
+    /* GLOBAL */
     * {
       box-sizing: border-box;
     }
@@ -16,7 +19,6 @@
       background: #f5f5f5;
     }
 
-    /* LAYOUT */
     .container {
       display: flex;
     }
@@ -49,11 +51,11 @@
       text-decoration: underline;
     }
 
-    /* MAIN */
+    /* MAIN CONTENT */
     .main {
-      margin-left: 220px;
+      margin-left: 240px;
       padding: 40px;
-      width: calc(100% - 220px);
+      width: calc(100% - 240px);
     }
 
     .main h1 {
@@ -74,65 +76,106 @@
       color: #555;
     }
 
-    .intro-text p {
-      margin: 0;
-    }
-
     /* GRID */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 5px;
+      gap: 30px;
     }
 
+    /* ITEM */
     .item {
-      width: 100%;
-      min-width: 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* CONTENT BLOCK */
+    .item-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      width: 82%;
+    }
+
+    /* IMAGE WRAPPER */
+    .image-wrapper {
+      overflow: hidden;
     }
 
     .item img {
       width: 100%;
       height: auto;
+      object-fit: cover;
       display: block;
+      transition: transform 0.3s ease;
     }
 
-    /* TABLET */
+    /* HOVER EFFECT */
+    .item:hover img {
+      transform: scale(0.92);
+    }
+
+    /* CAPTION */
+    .caption {
+      font-size: 14px;
+      margin-top: 6px;
+      color: #555;
+      text-align: left;
+    }
+
+
+    /* ==================================
+       TABLET RESPONSIVENESS
+       Screens below 900px
+    ================================== */
+
     @media (max-width: 900px) {
+
+      /* Two-column gallery */
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .item-link {
+        width: 90%;
+      }
+
       .main {
         padding: 30px;
       }
 
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .intro-text {
-        max-width: 100%;
-        margin-bottom: 30px;
-      }
     }
 
-    /* MOBILE */
+
+    /* ==================================
+       MOBILE RESPONSIVENESS
+       Screens below 600px
+    ================================== */
+
     @media (max-width: 600px) {
+
+      /* GENERAL LAYOUT */
       .container {
         display: block;
       }
 
+      /* MOBILE NAVIGATION */
       .sidebar {
         position: relative;
         width: 100%;
         height: auto;
-        padding: 25px 20px 15px;
+        padding: 20px;
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
-        gap: 10px 18px;
+        gap: 12px 18px;
       }
 
       .sidebar h2 {
         width: 100%;
-        margin: 0 0 10px;
         font-size: 18px;
+        margin: 0 0 5px 0;
       }
 
       .sidebar a {
@@ -141,27 +184,45 @@
         font-size: 13px;
       }
 
+      /* MAIN CONTENT */
       .main {
         margin-left: 0;
         width: 100%;
-        padding: 25px 20px 40px;
+        padding: 25px 20px;
       }
 
       .main h1 {
         font-size: 26px;
-        margin-bottom: 15px;
+        margin-bottom: 18px;
       }
 
+      /* INTRODUCTION */
       .intro-text {
-        font-size: 13px;
-        line-height: 1.7;
+        font-size: 14px;
         margin-bottom: 25px;
       }
 
+      /* SINGLE COLUMN GALLERY */
       .gallery {
         grid-template-columns: 1fr;
-        gap: 5px;
+        gap: 25px;
       }
+
+      .item-link {
+        width: 100%;
+      }
+
+      /* CAPTIONS */
+      .caption {
+        font-size: 13px;
+        margin-top: 5px;
+      }
+
+      /* DISABLE HOVER SHRINK ON TOUCH SCREENS */
+      .item:hover img {
+        transform: none;
+      }
+
     }
 
   </style>
@@ -175,49 +236,133 @@
   <div class="sidebar">
     <h2>Ethan David Bieg</h2>
 
-    <a href="../../index.html">Home</a>
-    <a href="../../about.html">About</a>
-    <a href="../../photography.html">Photography</a>
-    <a href="../../videography.html">Videography</a>
-    <a href="../../music.html">Music</a>
-    <a href="../../visualart.html">Visual Art</a>
-    <a href="../../poetry.html">Poetry</a>
-    <a href="../../contact.html">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="photography.html">Photography</a>
+    <a href="videography.html">Videography</a>
+    <a href="music.html">Music</a>
+    <a href="visualart.html">Visual Art</a>
+    <a href="poetry.html">Poetry</a>
+    <a href="contact.html">Contact</a>
   </div>
 
-  <!-- MAIN -->
+  <!-- MAIN CONTENT -->
   <div class="main">
 
-    <h1>Black & White Winter Film</h1>
+    <h1>Recent moments</h1>
 
-    <!-- INTRODUCTION -->
-    <div class="intro-text">
-      <p>
-        I've recently been falling in love with the B/W look. I shot this roll on my Nikkormat film
-        camera, and was pleasantly surprised with how many photos I loved from the set. I felt this
-        roll in particular captured part of the feeling of the intensity of winter in Europe, the stark
-        contrast between darkness and light, the harsh cold, and the warmth of Christmas.
-      </p>
-    </div>
-
-    <!-- PHOTO GALLERY -->
     <div class="gallery">
 
-      <div class="item"><img src="images/1.jpg" alt="Winter film photograph 1"></div>
-      <div class="item"><img src="images/2.jpg" alt="Winter film photograph 2"></div>
-      <div class="item"><img src="images/3.jpg" alt="Winter film photograph 3"></div>
+      <div class="item">
+        <a href="index/NULL/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/NULL/thumb.jpg">
+          </div>
+          <div class="caption">⏳Coming Soon</div>
+        </a>
+      </div>
 
-      <div class="item"><img src="images/4.jpg" alt="Winter film photograph 4"></div>
-      <div class="item"><img src="images/5.jpg" alt="Winter film photograph 5"></div>
-      <div class="item"><img src="images/6.jpg" alt="Winter film photograph 6"></div>
+      <div class="item">
+        <a href="index/WEDSU26/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/WEDSU26/thumb.jpg">
+          </div>
+          <div class="caption">☀️Summer 2026 | Simon and Mara's Wedding</div>
+        </a>
+      </div>
 
-      <div class="item"><img src="images/7.jpg" alt="Winter film photograph 7"></div>
-      <div class="item"><img src="images/8.jpg" alt="Winter film photograph 8"></div>
-      <div class="item"><img src="images/9.jpg" alt="Winter film photograph 9"></div>
+      <div class="item">
+        <a href="index/WEDSP26/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/WEDSP26/thumb.jpg">
+          </div>
+          <div class="caption">🌷Spring 2026 | Emma and Johannes' Wedding</div>
+        </a>
+      </div>
 
-      <div class="item"><img src="images/10.jpg" alt="Winter film photograph 10"></div>
-      <div class="item"><img src="images/11.jpg" alt="Winter film photograph 11"></div>
-      <div class="item"><img src="images/12.jpg" alt="Winter film photograph 12"></div>
+      <!-- ROW 1 -->
+      <div class="item">
+        <a href="index/hfuintlsp26/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/hfuintlsp26/thumb.jpg">
+          </div>
+          <div class="caption">🌷Spring 2026 | International Festival Schwenningen</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="index/limisp26/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/limisp26/thumb.jpg">
+          </div>
+          <div class="caption">🌷Spring 2026 | Liminalität at HFU</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="index/hfusp26/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/hfusp26/thumb.jpg">
+          </div>
+          <div class="caption">🌷Spring 2026 | Spring at HFU</div>
+        </a>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="item">
+        <a href="index/bwfilmwi25/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/bwfilmwi25/thumb.jpg">
+          </div>
+          <div class="caption">❄️Winter 2025 | Germany on B/W Film</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="index/alpfa25/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/alpfa25/thumb.jpg">
+          </div>
+          <div class="caption">🍂Fall 2025 | Hike to Seealpsee</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="index/cofilmsu25/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/cofilmsu25/thumb.jpg">
+          </div>
+          <div class="caption">☀️Summer 2025 | Europe and USA on Film</div>
+        </a>
+      </div>
+
+      <!-- ROW 3 -->
+      <div class="item">
+        <a href="index/inclsu25/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/inclsu25/thumb.jpg">
+          </div>
+          <div class="caption">☀️Summer 2025 | Inclusion Coffee Content</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="index/portsp25/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/portsp25/thumb.jpg">
+          </div>
+          <div class="caption">🌷Spring 2025 | Chris and Karen portraits</div>
+        </a>
+      </div>
+
+      <div class="item">
+        <a href="index/joursp25/index.html" class="item-link">
+          <div class="image-wrapper">
+            <img src="index/joursp25/thumb.jpg">
+          </div>
+          <div class="caption">🌷Spring 2025 | Photo Journal Entry</div>
+        </a>
+      </div>
 
     </div>
 

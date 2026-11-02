@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spring at HFU</title>
+  <title>Chris and Karen</title>
 
   <style>
     * {
@@ -25,7 +24,7 @@
 
     /* SIDEBAR */
     .sidebar {
-      width: 240px;
+      width: 220px;
       height: 100vh;
       position: fixed;
       left: 0;
@@ -53,9 +52,9 @@
 
     /* MAIN CONTENT */
     .main {
-      margin-left: 240px;
+      margin-left: 220px;
       padding: 40px;
-      width: calc(100% - 240px);
+      width: calc(100% - 220px);
       min-height: 100vh;
     }
 
@@ -140,7 +139,7 @@
       margin-top: 18px;
     }
 
-    /* RESPONSIVE */
+    /* TABLET */
     @media (max-width: 900px) {
       .sidebar {
         width: 180px;
@@ -169,26 +168,39 @@
       }
     }
 
+    /* MOBILE */
     @media (max-width: 600px) {
+      .container {
+        display: block;
+      }
+
       .sidebar {
         position: relative;
         width: 100%;
         height: auto;
-        padding: 20px;
+        padding: 25px 20px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 18px;
       }
 
       .sidebar h2 {
-        margin-bottom: 15px;
+        width: 100%;
+        margin: 0 0 10px;
+        font-size: 18px;
       }
 
-      .container {
-        display: block;
+      .sidebar a {
+        display: inline-block;
+        margin: 0;
+        font-size: 13px;
       }
 
       .main {
         margin-left: 0;
         width: 100%;
-        padding: 20px 12px 35px;
+        padding: 25px 15px 35px;
       }
 
       .main h1 {
@@ -196,6 +208,8 @@
       }
 
       .intro-text {
+        font-size: 13px;
+        line-height: 1.7;
         margin-bottom: 25px;
       }
 
@@ -206,12 +220,17 @@
 
       .carousel-button {
         width: 30px;
+        height: 42px;
         font-size: 25px;
       }
 
       .photo-stage {
         height: 55vh;
         min-height: 220px;
+      }
+
+      .photo-counter {
+        margin-top: 15px;
       }
     }
   </style>
@@ -240,10 +259,10 @@
 
     <h1>Chris and Karen</h1>
 
-    <!-- DESCRIPTION: EDIT THIS TEXT -->
+    <!-- DESCRIPTION -->
     <div class="intro-text">
       <p>
-        I still rememeber the day I texted Chris and Karen asking if they wanted to do a improvised couples shoot.
+        I still remember the day I texted Chris and Karen asking if they wanted to do an improvised couples shoot.
         I had a vision and a burning desire to bring it to reality that day. They trusted me enough to go on an 
         adventure that evening in Cedar Hill and you'll find a few highlights here.
       </p>
@@ -264,7 +283,7 @@
         <img
           id="carousel-image"
           src="images/1.jpg"
-          alt="Spring at HFU, photo 1 of 10">
+          alt="Chris and Karen, photo 1 of 10">
       </div>
 
       <button
@@ -311,7 +330,7 @@
     currentPhoto = (index + photos.length) % photos.length;
 
     image.src = photos[currentPhoto];
-    image.alt = `Spring at HFU, photo ${currentPhoto + 1} of ${photos.length}`;
+    image.alt = `Chris and Karen, photo ${currentPhoto + 1} of ${photos.length}`;
     counter.textContent = `${currentPhoto + 1} / ${photos.length}`;
   }
 
@@ -345,4 +364,3 @@
 
 </body>
 </html>
-```

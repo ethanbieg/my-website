@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emma and Johannes' Wedding</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* LAYOUT */
+    .container {
+      display: flex;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 40px 20px;
+      background: #f5f5f5;
+      box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN */
+    .main {
+      margin-left: 240px;
+      padding: 40px;
+      width: calc(100% - 240px);
+      box-sizing: border-box;
+    }
+
+    .main h1 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    /* INTRODUCTION */
+    .intro-text {
+      max-width: 650px;
+      margin: 0 auto 35px;
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* GRID */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+
+    .item {
+      width: 100%;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .caption {
+      font-size: 14px;
+      margin-top: 4px;
+      text-align: center;
+      color: #555;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .main {
+        padding: 25px;
+      }
+
+      .intro-text {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>Ethan David Bieg</h2>
+
+    <a href="../../index.html">Home</a>
+    <a href="../../about.html">About</a>
+    <a href="../../photography.html">Photography</a>
+    <a href="../../videography.html">Videography</a>
+    <a href="../../music.html">Music</a>
+    <a href="../../visualart.html">Visual Art</a>
+    <a href="../../poetry.html">Poetry</a>
+    <a href="../../contact.html">Contact</a>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <h1>Liminalität at HFU</h1>
+
+    <!-- INTRODUCTION -->
+    <div class="intro-text">
+      <p>
+        Liminalität was a unique art exhibition put on by my University, HFU, that I helped organize with a few others. 
+        It was an exploration in ideas about liminality and being in the middle of past and future. Many of the 
+        design and art students from our university created interactive exhibits, a few of which I've captured here.
+      </p>
+    </div>
+
+    <!-- PHOTO GALLERY -->
+    <div class="gallery">
+
+      <div class="item"><img src="images/1.jpg" alt="Wedding photograph 1"></div>
+      <div class="item"><img src="images/2.jpg" alt="Wedding photograph 2"></div>
+      <div class="item"><img src="images/3.jpg" alt="Wedding photograph 3"></div>
+
+      <div class="item"><img src="images/4.jpg" alt="Wedding photograph 4"></div>
+      <div class="item"><img src="images/5.jpg" alt="Wedding photograph 5"></div>
+      <div class="item"><img src="images/6.jpg" alt="Wedding photograph 6"></div>
+
+      <div class="item"><img src="images/7.jpg" alt="Wedding photograph 7"></div>
+      <div class="item"><img src="images/8.jpg" alt="Wedding photograph 8"></div>
+      <div class="item"><img src="images/9.jpg" alt="Wedding photograph 9"></div>
+
+      <div class="item"><img src="images/10.jpg" alt="Wedding photograph 10"></div>
+      <div class="item"><img src="images/11.jpg" alt="Wedding photograph 11"></div>
+      <div class="item"><img src="images/12.jpg" alt="Wedding photograph 12"></div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
+```

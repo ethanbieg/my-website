@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,10 @@
   <title>My Portfolio</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -27,7 +30,6 @@
       top: 0;
       padding: 40px 20px;
       background: #f5f5f5;
-      box-sizing: border-box;
     }
 
     .sidebar h2 {
@@ -50,10 +52,9 @@
     /* MAIN CONTENT */
     .main {
       margin-left: 220px;
-      padding: 40px 40px 40px;
+      padding: 40px;
       width: calc(100% - 220px);
       min-height: 100vh;
-      box-sizing: border-box;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -62,12 +63,14 @@
     /* CONTACT SECTION */
     .contact-section {
       text-align: center;
+      width: 100%;
     }
 
     /* CONTACT IMAGE */
     .contact-section img {
       width: 280px;
       height: 280px;
+      max-width: 100%;
       object-fit: cover;
       display: block;
       margin: 0 auto 30px;
@@ -94,11 +97,68 @@
       text-decoration: underline;
     }
 
-    /* RESPONSIVE */
+    /* TABLET */
     @media (max-width: 900px) {
       .main {
-        margin-left: 220px;
-        width: calc(100% - 220px);
+        padding: 30px;
+      }
+
+      .contact-section img {
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .container {
+        display: block;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 25px 20px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 18px;
+      }
+
+      .sidebar h2 {
+        width: 100%;
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      .main {
+        margin-left: 0;
+        width: 100%;
+        min-height: auto;
+        padding: 35px 20px 40px;
+      }
+
+      .contact-section img {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 25px;
+      }
+
+      .contact-section h1 {
+        font-size: 26px;
+        margin-bottom: 30px;
+      }
+
+      .contact-links a {
+        font-size: 15px;
+        margin-bottom: 16px;
       }
     }
 
@@ -133,7 +193,7 @@
       <h1>Ways to contact me</h1>
 
       <div class="contact-links">
-      <a href="mailto:ethanbieg7@gmail.com">Email</a>
+        <a href="mailto:ethanbieg7@gmail.com">Email</a>
 
         <a href="https://www.linkedin.com/in/ethan-bieg/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>

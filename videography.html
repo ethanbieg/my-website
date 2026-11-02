@@ -1,5 +1,4 @@
 
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +7,11 @@
   <title>Creative Portfolio</title>
 
   <style>
+
+    /* GLOBAL */
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -20,6 +24,7 @@
       display: flex;
     }
 
+    /* SIDEBAR */
     .sidebar {
       width: 220px;
       height: 100vh;
@@ -48,11 +53,11 @@
       text-decoration: underline;
     }
 
+    /* MAIN CONTENT */
     .main {
       margin-left: 240px;
       width: calc(100% - 240px);
       padding: 40px;
-      box-sizing: border-box;
     }
 
     .main h1 {
@@ -63,6 +68,7 @@
       margin-bottom: 20px;
     }
 
+    /* CINEMATIC VIDEO GRID */
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -81,25 +87,32 @@
       color: inherit;
     }
 
+    /* CINEMATIC VIDEO WRAPPER */
     .photo-video-wrapper {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background: black;
-  transition: transform 0.3s ease;
-}
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: black;
+      transition: transform 0.3s ease;
+    }
 
-.photo-video-wrapper video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+    .photo-video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
 
-.photo-item:hover .photo-video-wrapper {
-  transform: scale(0.92);
-}
+    .photo-item:hover .photo-video-wrapper {
+      transform: scale(0.92);
+    }
 
+    /* VIDEO TITLES AND SUBTITLES */
+    .photo-title {
+      margin-top: 8px;
+      font-size: 15px;
+      color: #333;
+    }
 
     .photo-subtitle {
       margin-top: 4px;
@@ -108,6 +121,7 @@
       line-height: 1.4;
     }
 
+    /* CANVASES HEADING */
     .video-heading {
       text-align: center;
       font-size: 32px;
@@ -116,6 +130,7 @@
       margin-bottom: 60px;
     }
 
+    /* VERTICAL VIDEO GRID */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -146,24 +161,129 @@
       transform: scale(0.92);
     }
 
+
+    /* ==================================
+       TABLET RESPONSIVENESS
+       Screens below 900px
+    ================================== */
+
     @media (max-width: 900px) {
 
+      .main {
+        padding: 30px;
+      }
+
+      /* Cinematic videos */
       .photo-grid {
         grid-template-columns: 1fr;
         gap: 50px;
+        margin-bottom: 70px;
       }
 
+      .photo-link {
+        width: 85%;
+      }
+
+      /* Vertical videos */
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .video-wrapper {
+        width: 85%;
+      }
+
+    }
+
+
+    /* ==================================
+       MOBILE RESPONSIVENESS
+       Screens below 600px
+    ================================== */
+
+    @media (max-width: 600px) {
+
+      /* GENERAL LAYOUT */
+      .container {
+        display: block;
+      }
+
+      /* MOBILE NAVIGATION */
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .sidebar h2 {
+        width: 100%;
+        font-size: 18px;
+        margin: 0 0 5px 0;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      /* MAIN CONTENT */
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 25px 20px;
+      }
+
+      .main h1 {
+        font-size: 26px;
+        margin-bottom: 25px;
+      }
+
+      /* CINEMATIC VIDEOS */
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin-bottom: 60px;
+      }
+
+      .photo-link {
+        width: 100%;
+      }
+
+      .photo-title {
+        font-size: 14px;
+      }
+
+      .photo-subtitle {
+        font-size: 13px;
+      }
+
+      /* CANVASES HEADING */
+      .video-heading {
+        font-size: 26px;
+        margin-top: 10px;
+        margin-bottom: 30px;
+      }
+
+      /* VERTICAL VIDEOS */
       .video-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
       }
 
-      .photo-link,
       .video-wrapper {
         width: 100%;
       }
 
-      .main {
-        padding: 25px;
+      /* DISABLE HOVER SHRINK ON TOUCH SCREENS */
+      .photo-item:hover .photo-video-wrapper,
+      .video-item:hover .video-wrapper {
+        transform: none;
       }
 
     }
@@ -175,6 +295,7 @@
 
 <div class="container">
 
+  <!-- SIDEBAR -->
   <div class="sidebar">
 
     <h2>Ethan David Bieg</h2>
@@ -190,99 +311,99 @@
 
   </div>
 
+  <!-- MAIN CONTENT -->
   <div class="main">
 
     <h1>A few of my video projects</h1>
 
-<div class="photo-grid">
+    <!-- CINEMATIC VIDEOS -->
+    <div class="photo-grid">
 
-  <div class="photo-item">
-    <a href="" class="photo-link">
+      <div class="photo-item">
+        <a href="" class="photo-link">
 
-      <div class="photo-video-wrapper">
-        <video muted loop preload="metadata">
-          <source src="videography/longvideo1.mp4" type="video/mp4">
-        </video>
+          <div class="photo-video-wrapper">
+            <video muted loop playsinline preload="metadata">
+              <source src="videography/longvideo1.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="photo-title">
+            Arizona 2025 - A cinematic reel
+          </div>
+
+          <div class="photo-subtitle">
+            As short cinematic film I created from a trip I took this past summer in the greater Phoenix area.
+          </div>
+
+        </a>
       </div>
 
-      <div class="photo-title">
-        Arizona 2025 - A cinematic reel
+      <div class="photo-item">
+        <a href="#" class="photo-link">
+
+          <div class="photo-video-wrapper">
+            <video muted loop playsinline preload="metadata">
+              <source src="videography/longvideo2.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="photo-title">
+            Album release video 2025
+          </div>
+
+          <div class="photo-subtitle">
+            Created this cinematic video as an announcement for my album: "snapshots of a kingdom of light".
+          </div>
+
+        </a>
       </div>
 
-      <div class="photo-subtitle">
-        As short cinematic film I created from a trip I took this past summer in the greater Phoenix area.
+      <div class="photo-item">
+        <a href="#" class="photo-link">
+
+          <div class="photo-video-wrapper">
+            <video muted loop playsinline preload="metadata">
+              <source src="videography/longvideo3.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="photo-title">
+            The Freestyle Heelying Video
+          </div>
+
+          <div class="photo-subtitle">
+            Me and 3 close friends bought Heelies when I had the vision to shoot this video as a fun passion project.
+          </div>
+
+        </a>
       </div>
 
-    </a>
-  </div>
+      <div class="photo-item">
+        <a href="#" class="photo-link">
 
-  <div class="photo-item">
-    <a href="#" class="photo-link">
+          <div class="photo-video-wrapper">
+            <video muted loop playsinline preload="metadata">
+              <source src="videography/longvideo4.mp4" type="video/mp4">
+            </video>
+          </div>
 
-      <div class="photo-video-wrapper">
-        <video muted loop preload="metadata">
-          <source src="videography/longvideo2.mp4" type="video/mp4">
-        </video>
+          <div class="photo-title">
+            Old Friends - A camcorder film
+          </div>
+
+          <div class="photo-subtitle">
+            I took a camcorder on a short reunion trip I had with some friends in Wisconsin. Sat on this footage
+            for a few years before I found it again and made this video.
+          </div>
+
+        </a>
       </div>
 
-      <div class="photo-title">
-        Album release video 2025
-      </div>
-
-      <div class="photo-subtitle">
-        Created this cinematic video as an announcement for my album: "snapshots of a kingdom of light".
-      </div>
-
-    </a>
-
-  </div>
-
- <div class="photo-item">
-    <a href="#" class="photo-link">
-
-      <div class="photo-video-wrapper">
-        <video muted loop preload="metadata">
-          <source src="videography/longvideo3.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="photo-title">
-        The Freestyle Heelying Video
-      </div>
-
-      <div class="photo-subtitle">
-        Me and 3 close friends bought Heelies when I had the vision to shoot this video as a fun passion project.
-        
-      </div>
-
-    </a>
-
-  </div>
-
- <div class="photo-item">
-    <a href="#" class="photo-link">
-
-      <div class="photo-video-wrapper">
-        <video muted loop preload="metadata">
-          <source src="videography/longvideo4.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="photo-title">
-        Old Friends - A camcorder film
-      </div>
-
-      <div class="photo-subtitle">
-        I took a camcorder on a short reunion trip I had with some friends in Wisconsin. Sat on this footage
-        for a few years before I found it again and made this video.
-      </div>
-
-    </a>
-  </div>
-
-</div>
+    </div>
 
 
+    <!-- CANVASES -->
     <div class="video-heading">
       Canvases
     </div>
@@ -291,7 +412,7 @@
 
       <div class="video-item">
         <div class="video-wrapper">
-          <video muted loop preload="metadata">
+          <video muted loop playsinline preload="metadata">
             <source src="videography/1.mp4" type="video/mp4">
           </video>
         </div>
@@ -299,7 +420,7 @@
 
       <div class="video-item">
         <div class="video-wrapper">
-          <video muted loop preload="metadata">
+          <video muted loop playsinline preload="metadata">
             <source src="videography/2.mp4" type="video/mp4">
           </video>
         </div>
@@ -307,7 +428,7 @@
 
       <div class="video-item">
         <div class="video-wrapper">
-          <video muted loop preload="metadata">
+          <video muted loop playsinline preload="metadata">
             <source src="videography/3.mp4" type="video/mp4">
           </video>
         </div>
@@ -319,25 +440,58 @@
 
 </div>
 
+
+<!-- VIDEO PLAYBACK SCRIPT -->
 <script>
+
+  const isTouchDevice =
+    window.matchMedia("(hover: none)").matches;
+
   document.querySelectorAll(".video-item, .photo-item").forEach(item => {
 
     const video = item.querySelector("video");
 
     if (!video) return;
 
-    item.addEventListener("mouseenter", () => {
-      video.play();
-    });
+    if (!isTouchDevice) {
 
-    item.addEventListener("mouseleave", () => {
-      video.pause();
-      video.currentTime = 0;
-    });
+      /* DESKTOP: PLAY ON HOVER */
+      item.addEventListener("mouseenter", () => {
+        video.play();
+      });
+
+      item.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+
+    } else {
+
+      /* MOBILE: PLAY WHEN VISIBLE */
+      const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+            video.currentTime = 0;
+          }
+
+        });
+
+      }, {
+        threshold: 0.5
+      });
+
+      observer.observe(item);
+
+    }
 
   });
+
 </script>
 
 </body>
 </html>
-```

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -7,6 +7,12 @@
   <title>About</title>
 
   <style>
+
+    /* GLOBAL */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -17,6 +23,7 @@
       display: flex;
     }
 
+    /* SIDEBAR */
     .sidebar {
       width: 220px;
       height: 100vh;
@@ -44,6 +51,7 @@
       text-decoration: underline;
     }
 
+    /* MAIN CONTENT */
     .main {
       margin-left: 240px;
       padding: 40px;
@@ -51,12 +59,16 @@
       display: flex;
       align-items: center;
       gap: 80px;
+      min-height: 100vh;
     }
 
+    /* PROFILE IMAGE */
     .profile {
       flex-shrink: 0;
       position: relative;
       width: 440px;
+      max-width: 100%;
+      cursor: pointer;
     }
 
     .profile img {
@@ -78,6 +90,7 @@
       opacity: 0;
     }
 
+    /* TEXT CONTENT */
     .content {
       max-width: 500px;
     }
@@ -94,7 +107,7 @@
       margin-bottom: 15px;
     }
 
-    /* ✨ Added style for "life" */
+    /* SCRIPT LINK */
     .script-link {
       font-family: 'Segoe Script', cursive;
       text-decoration: none;
@@ -105,16 +118,114 @@
       text-decoration: underline;
     }
 
-  </style>
 
+    /* ==================================
+       TABLET RESPONSIVENESS
+       Screens below 900px
+    ================================== */
+
+    @media (max-width: 900px) {
+
+      .main {
+        gap: 35px;
+        padding: 30px;
+      }
+
+      .profile {
+        width: 40%;
+      }
+
+      .content {
+        flex: 1;
+        min-width: 0;
+      }
+
+    }
+
+
+    /* ==================================
+       MOBILE RESPONSIVENESS
+       Screens below 600px
+    ================================== */
+
+    @media (max-width: 600px) {
+
+      /* GENERAL LAYOUT */
+      .container {
+        display: block;
+      }
+
+      /* MOBILE NAVIGATION */
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .sidebar h2 {
+        width: 100%;
+        font-size: 18px;
+        margin: 0 0 5px 0;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      /* MAIN CONTENT */
+      .main {
+        margin-left: 0;
+        width: 100%;
+        min-height: auto;
+        padding: 25px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+      }
+
+      /* PROFILE IMAGE */
+      .profile {
+        width: 100%;
+        max-width: 400px;
+        flex-shrink: 1;
+      }
+
+      /* TEXT CONTENT */
+      .content {
+        width: 100%;
+        max-width: 500px;
+      }
+
+      .content h1 {
+        font-size: 24px;
+        margin-bottom: 18px;
+      }
+
+      .content p {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
 <div class="container">
 
+  <!-- SIDEBAR -->
   <div class="sidebar">
     <h2>Ethan David Bieg</h2>
+
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="photography.html">Photography</a>
@@ -125,13 +236,16 @@
     <a href="contact.html">Contact</a>
   </div>
 
+  <!-- MAIN CONTENT -->
   <div class="main">
 
+    <!-- PROFILE IMAGE -->
     <div class="profile" id="profileBox">
-      <img class="base" id="imgBase" src="about/profile.jpg">
-      <img class="overlay" id="imgOverlay" src="about/profile2.jpg">
+      <img class="base" id="imgBase" src="about/profile.jpg" alt="Ethan">
+      <img class="overlay" id="imgOverlay" src="about/profile2.jpg" alt="">
     </div>
 
+    <!-- ABOUT TEXT -->
     <div class="content">
       <h1>About Me</h1>
 
@@ -140,14 +254,14 @@
       </p>
 
       <p>
-        I'm deeply inspired by beauty and 
-        <a href="about/life.html" class="script-link">life</a>, 
-        and my work displays the range of that experience for me. 
+        I'm deeply inspired by beauty and
+        <a href="about/life.html" class="script-link">life</a>,
+        and my work displays the range of that experience for me.
       </p>
 
       <p>
-        My desire is that through my portfolio, you might be drawn deeper 
-        into the tale of wrestling, dancing, and living that is our experience 
+        My desire is that through my portfolio, you might be drawn deeper
+        into the tale of wrestling, dancing, and living that is our experience
         as humans.
       </p>
     </div>
@@ -157,6 +271,7 @@
 </div>
 
 <script>
+
 const images = [
   "about/profile.jpg",
   "about/profile2.jpg"
@@ -169,7 +284,8 @@ const box = document.getElementById("profileBox");
 const base = document.getElementById("imgBase");
 const overlay = document.getElementById("imgOverlay");
 
-box.addEventListener("mouseenter", () => {
+function changeImage() {
+
   if (isAnimating) return;
 
   isAnimating = true;
@@ -186,7 +302,23 @@ box.addEventListener("mouseenter", () => {
   setTimeout(() => {
     isAnimating = false;
   }, 800);
+
+}
+
+/* DESKTOP: CHANGE IMAGE ON HOVER */
+box.addEventListener("mouseenter", () => {
+  if (window.matchMedia("(hover: hover)").matches) {
+    changeImage();
+  }
 });
+
+/* MOBILE: CHANGE IMAGE ON TAP */
+box.addEventListener("click", () => {
+  if (!window.matchMedia("(hover: hover)").matches) {
+    changeImage();
+  }
+});
+
 </script>
 
 </body>

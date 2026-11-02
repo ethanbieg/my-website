@@ -1,0 +1,348 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spring at HFU</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: black;
+    }
+
+    /* LAYOUT */
+    .container {
+      display: flex;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 240px;
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 40px 20px;
+      background: #f5f5f5;
+    }
+
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN CONTENT */
+    .main {
+      margin-left: 240px;
+      padding: 40px;
+      width: calc(100% - 240px);
+      min-height: 100vh;
+    }
+
+    .main h1 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    /* DESCRIPTION */
+    .intro-text {
+      max-width: 650px;
+      margin: 0 auto 35px;
+      text-align: left;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* CAROUSEL */
+    .carousel {
+      display: grid;
+      grid-template-columns: 50px minmax(0, 1fr) 50px;
+      align-items: center;
+      gap: 15px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* IMAGE AREA */
+    .photo-stage {
+      height: min(65vh, 700px);
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .photo-stage img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      transition: opacity 0.2s ease;
+    }
+
+    /* ARROW BUTTONS */
+    .carousel-button {
+      width: 46px;
+      height: 46px;
+      border: none;
+      background: transparent;
+      color: black;
+      font-size: 32px;
+      font-family: Arial, sans-serif;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s ease;
+    }
+
+    .carousel-button:hover {
+      opacity: 0.5;
+    }
+
+    .carousel-button:focus-visible {
+      outline: 1px solid black;
+      outline-offset: 3px;
+    }
+
+    /* PHOTO COUNTER */
+    .photo-counter {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 18px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .sidebar {
+        width: 180px;
+        padding: 30px 15px;
+      }
+
+      .main {
+        margin-left: 180px;
+        width: calc(100% - 180px);
+        padding: 30px 20px;
+      }
+
+      .carousel {
+        grid-template-columns: 35px minmax(0, 1fr) 35px;
+        gap: 8px;
+      }
+
+      .carousel-button {
+        width: 35px;
+        height: 42px;
+        font-size: 27px;
+      }
+
+      .photo-stage {
+        height: 60vh;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+      }
+
+      .sidebar h2 {
+        margin-bottom: 15px;
+      }
+
+      .container {
+        display: block;
+      }
+
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px 12px 35px;
+      }
+
+      .main h1 {
+        font-size: 26px;
+      }
+
+      .intro-text {
+        margin-bottom: 25px;
+      }
+
+      .carousel {
+        grid-template-columns: 30px minmax(0, 1fr) 30px;
+        gap: 4px;
+      }
+
+      .carousel-button {
+        width: 30px;
+        font-size: 25px;
+      }
+
+      .photo-stage {
+        height: 55vh;
+        min-height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>Ethan David Bieg</h2>
+
+    <a href="../../index.html">Home</a>
+    <a href="../../about.html">About</a>
+    <a href="../../photography.html">Photography</a>
+    <a href="../../videography.html">Videography</a>
+    <a href="../../music.html">Music</a>
+    <a href="../../visualart.html">Visual Art</a>
+    <a href="../../poetry.html">Poetry</a>
+    <a href="../../contact.html">Contact</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <h1>Chris and Karen</h1>
+
+    <!-- DESCRIPTION: EDIT THIS TEXT -->
+    <div class="intro-text">
+      <p>
+        I still rememeber the day I texted Chris and Karen asking if they wanted to do a improvised couples shoot.
+        I had a vision and a burning desire to bring it to reality that day. They trusted me enough to go on an 
+        adventure that evening in Cedar Hill and you'll find a few highlights here.
+      </p>
+    </div>
+
+    <!-- PHOTO CAROUSEL -->
+    <div class="carousel" aria-label="Photo gallery">
+
+      <button
+        class="carousel-button"
+        id="previous"
+        type="button"
+        aria-label="Previous photo">
+        &#8592;
+      </button>
+
+      <div class="photo-stage">
+        <img
+          id="carousel-image"
+          src="images/1.jpg"
+          alt="Spring at HFU, photo 1 of 10">
+      </div>
+
+      <button
+        class="carousel-button"
+        id="next"
+        type="button"
+        aria-label="Next photo">
+        &#8594;
+      </button>
+
+    </div>
+
+    <div class="photo-counter" id="photo-counter" aria-live="polite">
+      1 / 10
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+  // PHOTO FILE PATHS
+  const photos = [
+    "images/1.jpg",
+    "images/2.jpg",
+    "images/3.jpg",
+    "images/4.jpg",
+    "images/5.jpg",
+    "images/6.jpg",
+    "images/7.jpg",
+    "images/8.jpg",
+    "images/9.jpg",
+    "images/10.jpg"
+  ];
+
+  let currentPhoto = 0;
+
+  const image = document.getElementById("carousel-image");
+  const counter = document.getElementById("photo-counter");
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+
+  function showPhoto(index) {
+    currentPhoto = (index + photos.length) % photos.length;
+
+    image.src = photos[currentPhoto];
+    image.alt = `Spring at HFU, photo ${currentPhoto + 1} of ${photos.length}`;
+    counter.textContent = `${currentPhoto + 1} / ${photos.length}`;
+  }
+
+  previousButton.addEventListener("click", () => {
+    showPhoto(currentPhoto - 1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    showPhoto(currentPhoto + 1);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.target instanceof HTMLElement &&
+      (event.target.isContentEditable ||
+       ["INPUT", "TEXTAREA", "SELECT", "BUTTON"].includes(event.target.tagName))
+    ) {
+      return;
+    }
+
+    if (event.key === "ArrowLeft") {
+      showPhoto(currentPhoto - 1);
+    } else if (event.key === "ArrowRight") {
+      showPhoto(currentPhoto + 1);
+    }
+  });
+
+  // Initialize the first photo when the page loads.
+  showPhoto(0);
+</script>
+
+</body>
+</html>
+```

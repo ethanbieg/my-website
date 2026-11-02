@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
 
-  <!-- Script font -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -31,11 +32,11 @@
       background: #f5f5f5;
     }
 
-.sidebar h2 {
-  font-size: 18px;
-  margin-bottom: 30px;
-  font-family: 'arial', cursive;
-  font-style: bold;
+    .sidebar h2 {
+      font-size: 18px;
+      margin-bottom: 30px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
     }
 
     .sidebar a {
@@ -52,10 +53,11 @@
 
     /* MAIN CONTENT */
     .main {
-      margin-left: 240px;
+      margin-left: 220px;
       padding: 40px;
-      width: calc(100% - 240px);
-      text-align: center; /* centers everything inside */
+      width: calc(100% - 220px);
+      min-height: 100vh;
+      text-align: center;
     }
 
     .main h1 {
@@ -68,31 +70,84 @@
       width: 100%;
       max-width: 700px;
       height: auto;
-      object-fit: cover;
-      margin-bottom: 2px;
+      display: block;
+      object-fit: contain;
+      margin: 0 auto 2px;
     }
 
     /* SCRIPT TEXT */
     .script-text {
       font-family: 'Segoe Script', cursive;
-      font-size: 15.40px;
+      font-size: 15.4px;
       color: #333;
+      line-height: 1.6;
+      text-align: center;
     }
 
-    /* RESPONSIVE */
+    /* TABLET */
     @media (max-width: 900px) {
+      .sidebar {
+        width: 180px;
+        padding: 30px 15px;
+      }
+
       .main {
-        margin-left: 0;
-        width: 100%;
+        margin-left: 180px;
+        width: calc(100% - 180px);
+        padding: 30px 20px;
+      }
+
+      .feature-image {
+        max-width: 100%;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .container {
+        display: block;
       }
 
       .sidebar {
         position: relative;
         width: 100%;
         height: auto;
+        padding: 25px 20px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 18px;
+      }
+
+      .sidebar h2 {
+        width: 100%;
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 25px 20px 40px;
+      }
+
+      .feature-image {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 5px;
+      }
+
+      .script-text {
+        font-size: 14px;
+        line-height: 1.6;
       }
     }
-
   </style>
 </head>
 
@@ -116,7 +171,6 @@
 
   <!-- MAIN CONTENT -->
   <div class="main">
-
 
     <img src="life.jpg" alt="Featured" class="feature-image">
 

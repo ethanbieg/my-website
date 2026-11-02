@@ -6,6 +6,10 @@
   <title>Emma and Johannes' Wedding</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -26,7 +30,6 @@
       top: 0;
       padding: 40px 20px;
       background: #f5f5f5;
-      box-sizing: border-box;
     }
 
     .sidebar h2 {
@@ -48,10 +51,9 @@
 
     /* MAIN */
     .main {
-      margin-left: 240px;
+      margin-left: 220px;
       padding: 40px;
-      width: calc(100% - 240px);
-      box-sizing: border-box;
+      width: calc(100% - 220px);
     }
 
     .main h1 {
@@ -72,7 +74,11 @@
       color: #555;
     }
 
-    /* GRID */
+    .intro-text p {
+      margin: 0;
+    }
+
+    /* GALLERY */
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -81,6 +87,7 @@
 
     .item {
       width: 100%;
+      min-width: 0;
     }
 
     .item img {
@@ -89,27 +96,74 @@
       display: block;
     }
 
-    .caption {
-      font-size: 14px;
-      margin-top: 4px;
-      text-align: center;
-      color: #555;
-    }
-
-    /* RESPONSIVE */
+    /* TABLET */
     @media (max-width: 900px) {
-      .gallery {
-        grid-template-columns: 1fr;
+      .main {
+        padding: 30px;
       }
 
-      .main {
-        padding: 25px;
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .intro-text {
         max-width: 100%;
+        margin-bottom: 30px;
       }
     }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .container {
+        display: block;
+      }
+
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 25px 20px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 18px;
+      }
+
+      .sidebar h2 {
+        width: 100%;
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 25px 20px 40px;
+      }
+
+      .main h1 {
+        font-size: 26px;
+        margin-bottom: 15px;
+      }
+
+      .intro-text {
+        font-size: 13px;
+        line-height: 1.7;
+        margin-bottom: 25px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+    }
+
   </style>
 </head>
 
@@ -139,11 +193,11 @@
     <!-- INTRODUCTION -->
     <div class="intro-text">
       <p>
-       Emma and Johannes' wedding was a special one. A highlight was the Lutheran church where the
-       ceremony took place that had such beautiful natural light and wood tones. I spent an hour or so with 
-       the couple before the ceremony to take some couples photos, which was one of my favorite moments
-       of the day. The weather that day started out cloudy and overcast but by the time the reception started, the sun 
-       had come out. Scroll to the bottom for film.
+        Emma and Johannes' wedding was a special one. A highlight was the Lutheran church where the
+        ceremony took place that had such beautiful natural light and wood tones. I spent an hour or so with
+        the couple before the ceremony to take some couples photos, which was one of my favorite moments
+        of the day. The weather that day started out cloudy and overcast but by the time the reception started, the sun
+        had come out. Scroll to the bottom for film.
       </p>
     </div>
 
@@ -190,4 +244,3 @@
 
 </body>
 </html>
-```

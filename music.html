@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,11 @@
   <title>Creative Portfolio</title>
 
   <style>
+
+    /* GLOBAL */
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -19,7 +25,6 @@
     }
 
     /* SIDEBAR */
-
     .sidebar {
       width: 220px;
       height: 100vh;
@@ -49,12 +54,10 @@
     }
 
     /* MAIN */
-
     .main {
       margin-left: 240px;
       width: calc(100% - 240px);
       padding: 40px;
-      box-sizing: border-box;
     }
 
     .main h1 {
@@ -65,7 +68,6 @@
     }
 
     /* PHOTO SECTION */
-
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -117,7 +119,6 @@
     }
 
     /* VIDEO SECTION */
-
     .video-heading {
       text-align: center;
       font-size: 32px;
@@ -155,26 +156,130 @@
       transform: scale(0.92);
     }
 
-    /* MOBILE */
+
+    /* ==================================
+       TABLET RESPONSIVENESS
+       Screens below 900px
+    ================================== */
 
     @media (max-width: 900px) {
 
+      .main {
+        padding: 30px;
+      }
+
+      /* Album artwork */
       .photo-grid {
         grid-template-columns: 1fr;
         gap: 50px;
+        margin-bottom: 70px;
+      }
+
+      .photo-link {
+        width: 85%;
+      }
+
+      /* Video gallery */
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .video-wrapper {
+        width: 85%;
+      }
+
+    }
+
+
+    /* ==================================
+       MOBILE RESPONSIVENESS
+       Screens below 600px
+    ================================== */
+
+    @media (max-width: 600px) {
+
+      /* GENERAL LAYOUT */
+      .container {
+        display: block;
+      }
+
+      /* MOBILE NAVIGATION */
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .sidebar h2 {
+        width: 100%;
+        font-size: 18px;
+        margin: 0 0 5px 0;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      /* MAIN CONTENT */
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 25px 20px;
+      }
+
+      .main h1 {
+        font-size: 26px;
+        margin-bottom: 30px;
+      }
+
+      /* ALBUM ARTWORK */
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        margin-bottom: 60px;
+      }
+
+      .photo-link {
+        width: 100%;
+      }
+
+      .photo-title {
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      .photo-subtitle {
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      /* VIDEO SECTION */
+      .video-heading {
+        font-size: 26px;
+        margin-top: 10px;
+        margin-bottom: 30px;
       }
 
       .video-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
       }
 
-      .photo-link,
       .video-wrapper {
         width: 100%;
       }
 
-      .main {
-        padding: 25px;
+      /* DISABLE HOVER SHRINK ON TOUCHSCREENS */
+      .photo-item:hover img,
+      .video-item:hover .video-wrapper {
+        transform: none;
       }
 
     }
@@ -187,7 +292,6 @@
 <div class="container">
 
   <!-- SIDEBAR -->
-
   <div class="sidebar">
 
     <h2>Ethan David Bieg</h2>
@@ -204,17 +308,14 @@
   </div>
 
   <!-- MAIN CONTENT -->
-
   <div class="main">
 
     <h1>Music I've released so far</h1>
 
     <!-- PHOTO SECTION -->
-
     <div class="photo-grid">
 
-      <!-- PHOTO 1 -->
-
+      <!-- ALBUM 1 -->
       <div class="photo-item">
         <a href="https://open.spotify.com/album/0eAao0eI7KFhPEqcKkucXb?si=BKW2stMRTxqXurWy2aD5OA" class="photo-link">
 
@@ -228,14 +329,13 @@
 
           <div class="photo-subtitle">
             My first album, released in 2025. The heart of this album was for rest, reflection, and meditation.
-            The album is full of natural sounds and samples that I recorded myself in nature. 
+            The album is full of natural sounds and samples that I recorded myself in nature.
           </div>
 
         </a>
       </div>
 
-      <!-- PHOTO 2 -->
-
+      <!-- SINGLE 2 -->
       <div class="photo-item">
         <a href="https://open.spotify.com/album/1DYUJTr4h9BXGPmCwLTPZv?si=PIPIcIobSUq_pvtNnDugIQ" class="photo-link">
 
@@ -253,11 +353,6 @@
           </div>
 
         </a>
-      </div>
-
-    </div>
-
-        </div>
       </div>
 
     </div>

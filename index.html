@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,12 @@
   <title>My Portfolio</title>
 
   <style>
+
+    /* GLOBAL */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -16,6 +23,7 @@
       display: flex;
     }
 
+    /* SIDEBAR */
     .sidebar {
       width: 220px;
       height: 100vh;
@@ -43,6 +51,7 @@
       text-decoration: underline;
     }
 
+    /* MAIN CONTENT */
     .main {
       margin-left: 240px;
       padding: 40px;
@@ -78,15 +87,15 @@
     .item {
       position: relative;
       display: flex;
-      justify-content: center; /* centers smaller image block */
+      justify-content: center;
     }
 
-    /* SMALLER CONTENT BLOCK */
+    /* CONTENT BLOCK */
     .item-link {
       text-decoration: none;
       color: inherit;
       display: block;
-      width: 82%; /* adjust this number to make photos smaller/larger */
+      width: 82%;
     }
 
     /* IMAGE WRAPPER */
@@ -102,11 +111,12 @@
       transition: transform 0.3s ease;
     }
 
-    /* SHRINK EFFECT */
+    /* HOVER EFFECT */
     .item:hover img {
       transform: scale(0.92);
     }
 
+    /* CAPTION */
     .caption {
       font-size: 14px;
       margin-top: 6px;
@@ -114,14 +124,105 @@
       text-align: left;
     }
 
+
+    /* ==================================
+       TABLET RESPONSIVENESS
+       Screens below 900px
+    ================================== */
+
     @media (max-width: 900px) {
+
+      /* Two-column gallery */
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .item-link {
+        width: 90%;
+      }
+
+      .main {
+        padding: 30px;
+      }
+
+    }
+
+
+    /* ==================================
+       MOBILE RESPONSIVENESS
+       Screens below 600px
+    ================================== */
+
+    @media (max-width: 600px) {
+
+      /* GENERAL LAYOUT */
+      .container {
+        display: block;
+      }
+
+      /* MOBILE NAVIGATION */
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      .sidebar h2 {
+        width: 100%;
+        font-size: 18px;
+        margin: 0 0 5px 0;
+      }
+
+      .sidebar a {
+        display: inline-block;
+        margin: 0;
+        font-size: 13px;
+      }
+
+      /* MAIN CONTENT */
+      .main {
+        margin-left: 0;
+        width: 100%;
+        padding: 25px 20px;
+      }
+
+      .main h1 {
+        font-size: 26px;
+        margin-bottom: 18px;
+      }
+
+      /* INTRODUCTION */
+      .intro-text {
+        font-size: 14px;
+        margin-bottom: 25px;
+      }
+
+      /* SINGLE COLUMN GALLERY */
       .gallery {
         grid-template-columns: 1fr;
+        gap: 25px;
       }
 
       .item-link {
         width: 100%;
       }
+
+      /* CAPTIONS */
+      .caption {
+        font-size: 13px;
+        margin-top: 5px;
+      }
+
+      /* DISABLE HOVER SHRINK ON TOUCH SCREENS */
+      .item:hover img {
+        transform: none;
+      }
+
     }
 
   </style>
@@ -131,6 +232,7 @@
 
 <div class="container">
 
+  <!-- SIDEBAR -->
   <div class="sidebar">
     <h2>Ethan David Bieg</h2>
 
@@ -144,14 +246,14 @@
     <a href="contact.html">Contact</a>
   </div>
 
+  <!-- MAIN CONTENT -->
   <div class="main">
 
     <h1>Recent moments</h1>
 
     <div class="gallery">
 
-      
-       <div class="item">
+      <div class="item">
         <a href="index/NULL/index.html" class="item-link">
           <div class="image-wrapper">
             <img src="index/NULL/thumb.jpg">
